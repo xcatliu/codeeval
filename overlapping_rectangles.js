@@ -1,12 +1,12 @@
 // https://www.codeeval.com/open_challenges/70/
 
 require('fs').readFileSync(process.argv[2]).toString().split('\n').forEach(function (line) {
-    if (line === "") {
+    if (line === '') {
         return;
     }
     var rectanglesA = line.split(',').slice(0, 4).map(function(item) {return Number(item);});
     var rectanglesB = line.split(',').slice(-4).map(function(item) {return Number(item);});
-    console.log(capitaliseFirstLetter(overlapping_rectangles(rectanglesA, rectanglesB).toString()));
+    console.log(overlapping_rectangles(rectanglesA, rectanglesB) ? 'True': 'False');
 });
 
 function overlapping_rectangles(rectanglesA, rectanglesB) {
@@ -17,9 +17,4 @@ function overlapping_rectangles(rectanglesA, rectanglesB) {
 function hasCommonSection(sectionA, sectionB) {
     return sectionA[1] >= sectionB[0] && sectionB[1] >= sectionA[0];
 }
-
-function capitaliseFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
 
