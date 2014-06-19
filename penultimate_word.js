@@ -4,6 +4,10 @@ require('fs').readFileSync(process.argv[2]).toString().split('\n').forEach(funct
     if (line === "") {
         return;
     }
-    console.log(line.split(' ').splice(-2, 1)[0]);
+    console.log(penultimate_word(line));
 });
+
+function penultimate_word(string) {
+    return string.split(' ').splice(-2, 1)[0];
+}
 
