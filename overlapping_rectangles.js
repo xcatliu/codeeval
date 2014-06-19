@@ -7,7 +7,7 @@ require('fs').readFileSync(process.argv[2]).toString().split('\n').forEach(funct
     var lineSplitResult = line.split(',');
     var rectanglesA = lineSplitResult.splice(0, 4);
     var rectanglesB = lineSplitResult;
-    console.log(isOverlapping(rectanglesA, rectanglesB));
+    console.log(capitaliseFirstLetter(isOverlapping(rectanglesA, rectanglesB).toString()));
 
     function isOverlapping(rectanglesA, rectanglesB) {
         return hasCommonSection([ rectanglesA[0], rectanglesA[2] ], [ rectanglesB[0], rectanglesB[2] ]) &&
@@ -18,6 +18,10 @@ require('fs').readFileSync(process.argv[2]).toString().split('\n').forEach(funct
         sectionA.sort();
         sectionB.sort();
         return sectionA[1] >= sectionB[0] && sectionA[0] <= sectionB[1];
+    }
+
+    function capitaliseFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
 });
