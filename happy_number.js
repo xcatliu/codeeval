@@ -5,7 +5,7 @@ require('fs').readFileSync(process.argv[2]).toString().split('\n').forEach(funct
         return;
     }
     var number = Number(line);
-    console.log(happy_number(number));
+    console.log(happy_number(number) ? 1 : 0);
 });
 
 function happy_number(number, stack) {
