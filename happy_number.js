@@ -24,7 +24,7 @@ function happy_number(number, stack) {
 }
 
 function getDigitSquareSum(number) {
-    return Array.prototype.reduce.call(number, function(prev, digit) {
+    return Array.prototype.reduce.call(number.toString(), function(prev, digit) {
         return prev + digit * digit;
     }, 0);
 }
