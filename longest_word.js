@@ -7,9 +7,12 @@ require('fs').readFileSync(process.argv[2]).toString().split('\n').forEach(funct
     console.log(longest_word(line));
 });
 
-function longest_word(string) {
-    return string.split(' ').sort(function(a, b) {
-        return a.length < b.length;
-    })[0];
+function longest_word(sentence) {
+    return sentence.split(' ').reduce(function(prev, value) {
+        if (prev.length >= value.length) {
+            return prev;
+        }
+        return value;
+    }, '');
 }
 
