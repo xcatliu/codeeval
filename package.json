@@ -1,0 +1,24 @@
+{
+  "name": "xcatliu-codeeval",
+  "version": "0.1.0",
+  "description": "XcatLiu's codeeval repository",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xcatliu/codeeval.git"
+  },
+  "keywords": [
+    "codeeval",
+    "xcatliu",
+    "algorithm"
+  ],
+  "author": "xcatliu <xcatliu@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xcatliu/codeeval/issues"
+  },
+  "homepage": "https://github.com/xcatliu/codeeval"
+}
