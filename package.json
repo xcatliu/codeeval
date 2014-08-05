@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/xcatliu/codeeval/issues"
   },
-  "homepage": "https://github.com/xcatliu/codeeval"
+  "homepage": "https://github.com/xcatliu/codeeval",
+  "devDependencies": {
+    "mocha": "^1.21.4"
+  }
 }
