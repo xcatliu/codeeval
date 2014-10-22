@@ -4,7 +4,9 @@ var path = require('path');
 var exec = require('child_process').exec;
 var fs = require('fs');
 
-var files = glob.sync(path.resolve(__dirname, '../lib/*'));
+var files = glob.sync(path.resolve(__dirname, '../easy/*'))
+        .concat(glob.sync(path.resolve(__dirname, '../moderate/*')))
+        .concat(glob.sync(path.resolve(__dirname, '../hard/*')));
 
 files.forEach(function(filePath) {
     var fileName = path.basename(filePath, '.js');
