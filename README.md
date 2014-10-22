@@ -7,6 +7,6 @@ Run Test
 --------
 
 ```
-npm run test
+npm test
 ```
 
