@@ -20,6 +20,7 @@ function armstrong_numbers(origin) {
             count = 1;
         }
     }
+    result.push(count, origin[i - 1]);
     return result;
 }
 
