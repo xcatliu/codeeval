@@ -5,7 +5,7 @@ require('fs').readFileSync(process.argv[2]).toString().split('\n').forEach(funct
         return;
     }
     var origin = line.split(' ').map(Number);
-    console.log(armstrong_numbers(origin));
+    console.log(armstrong_numbers(origin).join(' '));
 });
 
 function armstrong_numbers(origin) {
