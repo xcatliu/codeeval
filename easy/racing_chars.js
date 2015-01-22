@@ -118,6 +118,7 @@ function changeResultMap() {
     }
     tempDirection = mapObj[i - 1][tempIndex].direction;
   }
+  resultMap[0][tempIndex] = '|';
 }
 
 function getMaxItemIndex() {
