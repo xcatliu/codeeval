@@ -8,14 +8,16 @@ require('fs').readFileSync(process.argv[2]).toString().split('\n').forEach(funct
   }
   var lineSplit = line.split('; ');
   var working = lineSplit.map(function(experience) {
-    return experience.split('-');
+    return experience.split('-').map(function(dateString) {
+      return new Date(Date.parse(dateString));
+    });
   });
   console.log(working_experience(working));
 });
 
 function working_experience(working) {
   return working.map(function(one) {
-    return (Date.parse(one[1]) - Date.parse(one[0])) / year;
+    return [one[0], one[1]];
   });
 }
 
