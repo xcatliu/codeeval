@@ -16,8 +16,11 @@ require('fs').readFileSync(process.argv[2]).toString().split('\n').forEach(funct
 });
 
 function working_experience(working) {
-  return working.map(function(one) {
-    return [one[0], one[1]];
+  return working.map(function(w) {
+    return [dateToNumber(w[0]), dateToNumber(w[1])];
   });
 }
 
+function dateToNumber(d) {
+  return d.getYear() * 12 + d.getMonth();
+}
