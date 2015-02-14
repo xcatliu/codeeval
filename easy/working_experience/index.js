@@ -16,9 +16,33 @@ require('fs').readFileSync(process.argv[2]).toString().split('\n').forEach(funct
 });
 
 function working_experience(working) {
-  return working.map(function(w) {
+  var numberPairs = working.map(function(w) {
     return [dateToNumber(w[0]), dateToNumber(w[1])];
+  }).sort(function(a, b) {
+    return (a[0] - b[0]);
   });
+  var sum = 0;
+  var start = 0;
+  var end = 0;
+  numberPairs.forEach(function(pair, index) {
+    if (index === 0) {
+      start = pair[0];
+      end = pair[1];
+      return;
+    }
+    if (pair[0] > end) {
+      sum += end - start + 1;
+      start = pair[0];
+      end = pair[1];
+      return;
+    }
+    if (pair[1] < end) {
+      return;
+    }
+    end = pair[1];
+  });
+  sum += end - start + 1;
+  return Math.floor(sum / 12);
 }
 
 function dateToNumber(d) {
