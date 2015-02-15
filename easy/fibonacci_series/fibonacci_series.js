@@ -10,6 +10,9 @@ require('fs').readFileSync(process.argv[2]).toString().split('\n').forEach(funct
 });
 
 function fibonacci_series(n) {
+  if (n === 0) {
+    return 0;
+  }
   if (fibonacci[n - 1]) {
     return fibonacci[n - 1];
   }
