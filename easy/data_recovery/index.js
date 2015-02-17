@@ -4,13 +4,14 @@ require('fs').readFileSync(process.argv[2]).toString().split('\n').forEach(funct
   if (line === '') {
     return;
   }
-  var number = Number(line);
-  console.log(armstrong_numbers(number) ? 'True': 'False');
+  var lineSplit = data_recovery.split(';');
+  var sentence = lineSplit[0];
+  var numbers = lineSplit[1].split(' ');
+  console.log(data_recovery(sentence, numbers));
 });
 
-function armstrong_numbers(number) {
-  var length = number.toString().length;
-  return number === number.toString().split('').reduce(function(prev, item) {
-    return prev + Math.pow(Number(item), length);
-  }, 0);
+function data_recovery(sentence, numbers) {
+  var words = sentence.split(' ');
+  var newWords = [];
+  return words;
 }
