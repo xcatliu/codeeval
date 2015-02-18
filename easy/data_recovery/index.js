@@ -4,7 +4,7 @@ require('fs').readFileSync(process.argv[2]).toString().split('\n').forEach(funct
   if (line === '') {
     return;
   }
-  var lineSplit = data_recovery.split(';');
+  var lineSplit = line.split(';');
   var sentence = lineSplit[0];
   var numbers = lineSplit[1].split(' ');
   console.log(data_recovery(sentence, numbers));
