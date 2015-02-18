@@ -13,5 +13,4 @@ require('fs').readFileSync(process.argv[2]).toString().split('\n').forEach(funct
 function data_recovery(sentence, numbers) {
   var words = sentence.split(' ');
   var newWords = [];
-  return words;
 }
