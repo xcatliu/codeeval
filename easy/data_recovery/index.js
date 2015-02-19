@@ -14,7 +14,7 @@ function data_recovery(sentence, numbers) {
   var words = sentence.split(' ');
   var newWords = [];
   numbers.forEach(function(number, index) {
-    newWords[index] = words[number];
+    newWords[number - 1] = words[index];
   });
   return newWords.join(' ');
 }
