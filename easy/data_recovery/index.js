@@ -16,5 +16,13 @@ function data_recovery(sentence, numbers) {
   numbers.forEach(function(number, index) {
     newWords[number - 1] = words[index];
   });
+  var i;
+  var l = words.length;
+  for (i = 0; i < l; i++) {
+    if (typeof newWords[i] === 'undefined') {
+      newWords[i] = words[l];
+      break;
+    }
+  }
   return newWords.join(' ');
 }
