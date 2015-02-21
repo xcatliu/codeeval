@@ -20,7 +20,7 @@ function data_recovery(sentence, numbers) {
   var l = words.length;
   for (i = 0; i < l; i++) {
     if (typeof newWords[i] === 'undefined') {
-      newWords[i] = words[l];
+      newWords[i] = words[l - 1];
       break;
     }
   }
