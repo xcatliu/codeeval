@@ -5,7 +5,8 @@ require('fs').readFileSync(process.argv[2]).toString().split('\n').forEach(funct
     return;
   }
   var result = lettercase_percentage_ratio(line);
-  console.log('lowercase: ' + result.lowercase.toFixed(2) + ' uppercase: ' + result.uppercase.toFixed(2));
+  console.log('lowercase: ' + (result.lowercase * 100).toFixed(2)
+      + ' uppercase: ' + (result.uppercase * 100).toFixed(2));
 });
 
 function lettercase_percentage_ratio(line) {
